@@ -1,0 +1,26 @@
+query rewards($id: StakePoolID!) {
+  rewards: rewards(
+    where: {
+      _and: [
+        { stakePool: { id: { _eq: $id } } }
+        { earnedIn: { number: { _in: [262, 263, 264] } } }
+      ]
+    }
+  ) {
+    address
+    amount
+    earnedIn {
+      number
+    }
+  }
+  delegations: delegations(where: { stakePool: { id: { _eq: $id } } })
+  {
+    transaction{
+      outputs{
+        address
+        value
+      }
+    }
+  }
+}
+

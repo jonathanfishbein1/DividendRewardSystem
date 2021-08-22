@@ -1,0 +1,7 @@
+schema: https://graphql-api.mainnet.dandelion.link
+documents: ./queries.graphql
+
+hsSourceDir: ./
+apiModule: API
+enumsModule: Enums
+scalarsModule: Scalars
